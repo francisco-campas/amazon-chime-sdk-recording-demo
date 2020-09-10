@@ -50,7 +50,7 @@ const transcodeStreamToOutput = spawn('ffmpeg',[
         '-maxrate', `${VIDEO_BITRATE}`,
         '-g', `${VIDEO_GOP}`,
     // apply a fixed delay to the audio stream in order to synchronize it with the video stream
-    '-filter_complex', 'adelay=delays=0|0',
+    '-filter_complex', 'adelay=0|0',
     // codec audio with aac
     '-c:a', 'aac',
         '-b:a', `${AUDIO_BITRATE}`,
